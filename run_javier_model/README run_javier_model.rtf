@@ -1,0 +1,43 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 README for run_javier_model folder\
+
+\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 runjavier:\
+This script runs the Javier model simulation and plots the following graphs: mobility vs G0; a heat map of Q, the mobility matrix; a map of the locations of all of the nodes; and a graph of the original R0s, thetas, and population sizes\
+\
+runjavier_network: \
+This script does the exact same thing as runjavier except that the calculation of the Q mobility matrix is different. Instead of using the euclidean distance between 2 nodes to determine Sij, it uses the distance along the network topology. \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 calc_R0:\
+Calculates a vector of R0 values. The vector contains an R0 value for each node in the network.\
+\
+calc_shortest_paths:\
+This function will calculate the shortest paths between each node in the graph. \
+\
+exposure_rate:\
+This method returns the exposure rates based on population using a inverse logistic function.\
+\
+javierConstants:\
+Defines all of the constants used in the Javier model\
+\
+make_G0:\
+Calculates the G0 matrix using the formula given in Javier\'92s paper. It ignores all hydrological parts of G0.\
+\
+population_radius:\
+This method finds s, which refers to matrix where sij is the total population living within a radius dij around the origin, excluding the origin and destination populations, and dij being the euclidean distance between nodes i and j\
+\
+population_radius_network:\
+This method also finds s, the matrix where sij is the total population living within a radius dij around the origin. However, in this case, dij is NOT the euclidean distance, but is the distance between node i and node j along the network paths.\
+\
+radiation_model:\
+This function returns the Q matrix, where Qij is the probability that a person traveling out of node i reaches node j. Q is generated according to the radiational model.\
+\
+zipf_population:\
+This function calculates the populations at each node according to a zipf distribution.}
